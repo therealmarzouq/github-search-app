@@ -1,0 +1,24 @@
+<div href="/" class="clear-button" *ngIf="!viewUserData">
+  <input
+    class="btn btn-block"
+    type="button"
+    value="Back to search"
+    (click)="back()"
+  />
+</div>
+<div class="users-styles" *ngIf="!viewUserData">
+  <div class="user" *ngFor="let user of users">
+    <img class="user-image" [src]="user.avatar_url" alt="" />
+    <h3>{{ user.login }}</h3>
+    <input
+      class="btn"
+      type="button"
+      value="More"
+      (click)="viewUser(user.login)"
+    />
+  </div>
+</div>
+
+<div *ngIf="viewUserData">
+  <app-user [user]="userData"></app-user>
+</div>

@@ -1,0 +1,20 @@
+<div class="s128" *ngIf="!showSearchResult">
+  <form (ngSubmit)="searchGithub(searchParam)">
+    <div class="inner-form">
+      <div class="row">
+        <div class="input-search">
+          <input
+            type="search"
+            placeholder="Search github"
+            [(ngModel)]="searchParam"
+            name="searchParam"
+          />
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="s128" *ngIf="showSearchResult">
+  <app-users [users]="searchResult"></app-users>
+</div>

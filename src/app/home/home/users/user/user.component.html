@@ -1,0 +1,36 @@
+<div>
+  <a href="/" class="btn btn-light">
+    Back To Search
+  </a>
+  <div class="card grid-2">
+    <div class="all-center">
+      <img
+        [src]="user?.avatar_url"
+        class="round-img"
+        alt=""
+        style="width: '150px'"
+      />
+      <h1>{{ user?.name }}</h1>
+      <p>Location: {{ user?.location }}</p>
+    </div>
+    <div>
+      <!-- <Fragment> -->
+      <h3>Bio</h3>
+      <p>{{ user?.bio }}</p>
+      <a href="{{ user?.html_url }}" class="btn btn-dark my-1">
+        Visit Github Profile
+      </a>
+      <ul>
+        <li><strong>Username: </strong> {{ user?.login }}</li>
+
+        <li>blog <strong>Website: </strong> {{ user?.blog }}</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card text-center">
+    <div class="badge badge-primary">Followers: {{ user?.followers }}</div>
+    <div class="badge badge-success">Following: {{ user?.following }}</div>
+    <div class="badge badge-light">Public Repos: {{ user?.public_repos }}</div>
+    <div class="badge badge-dark">Public Gists: {{ user?.public_gists }}</div>
+  </div>
+</div>
